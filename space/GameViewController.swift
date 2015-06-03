@@ -8,6 +8,11 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
+import AddressBook
+
+var killGoal = 5
+var aliensPerFrame:Double = (1/60)
 
 extension SKNode {
     class func unarchiveFromFile(file : String) -> SKNode? {
@@ -25,31 +30,45 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
 
+// lets create an audio player instance
+var backgroundMusicPlayer = AVAudioPlayer()
+
+class GameViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
-        }
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        
+        playMusic()
+        
+        /** Create a spritekit view... **/
+        var skView:SKView = self.view as! SKView
+        skView.showsFPS = false
+        skView.showsNodeCount = false
+        
+        
+        /** Create a spritekit scene... and present it within the view **/
+        var scene = GameScene(size: skView.bounds.size)
+        scene.scaleMode = SKSceneScaleMode.AspectFill
+        skView.presentScene(scene)
+    }
+    
+    func playMusic(){
+        let bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("beatoff", withExtension: "mp3")!
+        backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
+        backgroundMusicPlayer.numberOfLoops = -1  // loops indefinitely
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
     }
 
     override func shouldAutorotate() -> Bool {
         return true
     }
-
+    
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
@@ -57,12 +76,12 @@ class GameViewController: UIViewController {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }

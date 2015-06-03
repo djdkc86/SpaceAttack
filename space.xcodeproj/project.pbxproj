@@ -15,6 +15,13 @@
 		F908FD291B1E16E30055F8DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F908FD281B1E16E30055F8DB /* Images.xcassets */; };
 		F908FD2C1B1E16E30055F8DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F908FD2A1B1E16E30055F8DB /* LaunchScreen.xib */; };
 		F908FD381B1E16E30055F8DB /* spaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908FD371B1E16E30055F8DB /* spaceTests.swift */; };
+		F908FD451B1E17B40055F8DB /* alien@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F908FD421B1E17B40055F8DB /* alien@2x.png */; };
+		F908FD461B1E17B40055F8DB /* shuttle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F908FD431B1E17B40055F8DB /* shuttle@2x.png */; };
+		F908FD471B1E17B40055F8DB /* torpedo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F908FD441B1E17B40055F8DB /* torpedo@2x.png */; };
+		F908FD4B1B1E17E80055F8DB /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F908FD491B1E17E80055F8DB /* bgmusic.mp3 */; };
+		F908FD4C1B1E17E80055F8DB /* torpedoFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F908FD4A1B1E17E80055F8DB /* torpedoFire.mp3 */; };
+		F985B9821B1F526800E654EC /* beatoff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F985B9811B1F526800E654EC /* beatoff.mp3 */; };
+		F985B9841B1F70CB00E654EC /* GameSceneNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F985B9831B1F70CB00E654EC /* GameSceneNext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,13 @@
 		F908FD311B1E16E30055F8DB /* spaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F908FD361B1E16E30055F8DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F908FD371B1E16E30055F8DB /* spaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spaceTests.swift; sourceTree = "<group>"; };
+		F908FD421B1E17B40055F8DB /* alien@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien@2x.png"; sourceTree = "<group>"; };
+		F908FD431B1E17B40055F8DB /* shuttle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuttle@2x.png"; sourceTree = "<group>"; };
+		F908FD441B1E17B40055F8DB /* torpedo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torpedo@2x.png"; sourceTree = "<group>"; };
+		F908FD491B1E17E80055F8DB /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusic.mp3; sourceTree = "<group>"; };
+		F908FD4A1B1E17E80055F8DB /* torpedoFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedoFire.mp3; sourceTree = "<group>"; };
+		F985B9811B1F526800E654EC /* beatoff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beatoff.mp3; sourceTree = "<group>"; };
+		F985B9831B1F70CB00E654EC /* GameSceneNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneNext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +98,10 @@
 				F908FD1D1B1E16E30055F8DB /* AppDelegate.swift */,
 				F908FD1F1B1E16E30055F8DB /* GameScene.sks */,
 				F908FD211B1E16E30055F8DB /* GameScene.swift */,
+				F985B9831B1F70CB00E654EC /* GameSceneNext.swift */,
 				F908FD231B1E16E30055F8DB /* GameViewController.swift */,
+				F908FD481B1E17D80055F8DB /* sounds */,
+				F908FD411B1E17720055F8DB /* sprites.atlas */,
 				F908FD251B1E16E30055F8DB /* Main.storyboard */,
 				F908FD281B1E16E30055F8DB /* Images.xcassets */,
 				F908FD2A1B1E16E30055F8DB /* LaunchScreen.xib */,
@@ -116,6 +133,26 @@
 				F908FD361B1E16E30055F8DB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F908FD411B1E17720055F8DB /* sprites.atlas */ = {
+			isa = PBXGroup;
+			children = (
+				F908FD421B1E17B40055F8DB /* alien@2x.png */,
+				F908FD431B1E17B40055F8DB /* shuttle@2x.png */,
+				F908FD441B1E17B40055F8DB /* torpedo@2x.png */,
+			);
+			name = sprites.atlas;
+			sourceTree = "<group>";
+		};
+		F908FD481B1E17D80055F8DB /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F985B9811B1F526800E654EC /* beatoff.mp3 */,
+				F908FD491B1E17E80055F8DB /* bgmusic.mp3 */,
+				F908FD4A1B1E17E80055F8DB /* torpedoFire.mp3 */,
+			);
+			name = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,9 +235,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F985B9821B1F526800E654EC /* beatoff.mp3 in Resources */,
+				F908FD461B1E17B40055F8DB /* shuttle@2x.png in Resources */,
+				F908FD451B1E17B40055F8DB /* alien@2x.png in Resources */,
 				F908FD2C1B1E16E30055F8DB /* LaunchScreen.xib in Resources */,
+				F908FD4B1B1E17E80055F8DB /* bgmusic.mp3 in Resources */,
+				F908FD471B1E17B40055F8DB /* torpedo@2x.png in Resources */,
 				F908FD291B1E16E30055F8DB /* Images.xcassets in Resources */,
 				F908FD201B1E16E30055F8DB /* GameScene.sks in Resources */,
+				F908FD4C1B1E17E80055F8DB /* torpedoFire.mp3 in Resources */,
 				F908FD271B1E16E30055F8DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F908FD221B1E16E30055F8DB /* GameScene.swift in Sources */,
+				F985B9841B1F70CB00E654EC /* GameSceneNext.swift in Sources */,
 				F908FD241B1E16E30055F8DB /* GameViewController.swift in Sources */,
 				F908FD1E1B1E16E30055F8DB /* AppDelegate.swift in Sources */,
 			);
@@ -419,6 +463,7 @@
 				F908FD3D1B1E16E30055F8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F908FD3E1B1E16E30055F8DB /* Build configuration list for PBXNativeTarget "spaceTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +472,7 @@
 				F908FD401B1E16E30055F8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
