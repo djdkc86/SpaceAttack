@@ -20,7 +20,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastYieldTimeInterval = NSTimeInterval()
     var lastUpdateTimeInterval = NSTimeInterval()
     var clock:Double = 0.0
-    
     var aliensDestroyed:Int = 0
     
     //bit mask which identifies collisions: (expression 0x1 is multiplied by 1)
@@ -69,8 +68,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         // create a random speed that the alien attacks with
-        let minDuration = 1.5
-        let maxDuration = 4.0
+        //        let minDuration = 1.5
+        //        let maxDuration = 4.0
         let rangeDuration = maxDuration - minDuration
         
         let duration = Double(arc4random()) % Double(rangeDuration) + Double(minDuration)
@@ -83,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // if the alien gets this far it means it made it across the whole screen
         actionArray.addObject(SKAction.runBlock({
             var transition = SKTransition.flipHorizontalWithDuration(0.5)
-            self.view?.presentScene(GameSceneNext(size: self.size, won:false), transition: transition)
+            self.view?.presentScene(GameSceneNext(size: self.size, status:2), transition: transition)
         }))
         
         
@@ -158,60 +157,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         torpedo.runAction(SKAction.sequence(actionArray as [AnyObject]))
     }
     
-    // handle the 'hits'
-    func torpedoDidCollideWithAlien(torpedo:SKSpriteNode, alien:SKSpriteNode){
-        
-        torpedo.removeFromParent()
-        alien.removeFromParent()
-        
-        aliensDestroyed += 1
-        
-        if aliensDestroyed == killGoal {
-            var transition = SKTransition.flipHorizontalWithDuration(0.5)
-            self.view?.presentScene(GameSceneNext(size: self.size, won:true), transition: transition)
-            killGoal += 1
-            
-            if (aliensPerFrame<=1/4){
-                aliensPerFrame += 1/60
-            }
-            
-            
-        }
-        
-    }
     
     
     // contact Delegate Method for handling collisions
     func didBeginContact(contact: SKPhysicsContact) {
-        var firstBody:SKPhysicsBody
-        var secondBody:SKPhysicsBody
         
-        // case where A is torpedo and B is alien
-        if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask){
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        } else {
+        var firstBody:SKPhysicsBody = contact.bodyA
+        var secondBody:SKPhysicsBody = contact.bodyB
+        
+        // make sure smaller one is torpedo
+        if (contact.bodyA.categoryBitMask > contact.bodyB.categoryBitMask){
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
         
-        // we know a photontorpedo collided with alien
-        if ( firstBody.categoryBitMask & photonTorpedoCategory != 0) && (secondBody.categoryBitMask & alienCategory != 0 ){
-            
-            //            torpedoDidCollideWithAlien(firstBody.node as! SKSpriteNode, alien: secondBody.node as! SKSpriteNode)
-          
-            
-            var node1:SKSpriteNode! = firstBody.node as! SKSpriteNode
-            var node2:SKSpriteNode! = secondBody.node as! SKSpriteNode
-            
-            if node1 != nil{
-                if node2 != nil{
-                    torpedoDidCollideWithAlien(node1, alien: node2)
+        // Direct Hit! (torpedo vs. alien) uses bit-wise operations for speed
+        if (firstBody.categoryBitMask & photonTorpedoCategory != 0) && (secondBody.categoryBitMask & alienCategory != 0 ){
+            if let nodeA:SKSpriteNode = firstBody.node as? SKSpriteNode{
+                if let nodeB:SKSpriteNode = secondBody.node as? SKSpriteNode{
+                    nodeA.removeFromParent()
+                    nodeB.removeFromParent()
+                    if ++aliensDestroyed == currentLevel {
+                        var tran = SKTransition.flipHorizontalWithDuration(0.5)
+                        self.view?.presentScene(GameSceneNext(size: self.size, status:1), transition: tran)
+                    }
                 }
+            } else {
+                return
             }
         }
     }
-    
     
     func torpedoSound(){
         torpedoMusicPlayer = AVAudioPlayer(contentsOfURL: torpedoURL, error: nil)
