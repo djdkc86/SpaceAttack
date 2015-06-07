@@ -54,8 +54,9 @@ class GameViewController: UIViewController {
     }
     
     func playMusic(){
-        let bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("beatoff", withExtension: "mp3")!
-        backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
+        let bgMusicURL1:NSURL = NSBundle.mainBundle().URLForResource("beatoff", withExtension: "mp3")!
+        let bgMusicURL2:NSURL = NSBundle.mainBundle().URLForResource("nateBGmusic", withExtension: "mp3")!
+        backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL2, error: nil)
         backgroundMusicPlayer.numberOfLoops = -1  // loops indefinitely
         backgroundMusicPlayer.prepareToPlay()
         backgroundMusicPlayer.play()

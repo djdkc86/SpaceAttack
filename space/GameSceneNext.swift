@@ -9,10 +9,11 @@
 
 import SpriteKit
 
-var aliensPerFrame:Double = (1/60)
+var torpedosPerFrame:Double = 1/30
+var aliensPerFrame:Double = 1/30
 var currentLevel = 1
-var minDuration = 3.0      // alien attack speeds
-var maxDuration = 7.0
+var minDuration = 2.5      // alien attack speeds
+var maxDuration = 5.0
 
 
 class GameSceneNext: SKScene {
@@ -24,12 +25,12 @@ class GameSceneNext: SKScene {
         var levelMessage:NSString = "Next Level: "
         
         if status == 1 {
-            if aliensPerFrame <= 1/4 { aliensPerFrame += 1/240 }
+            if aliensPerFrame <= 1 { aliensPerFrame += 1/480 }
             currentLevel += 1
-            if currentLevel % 5 == 0 {
-                if minDuration > 1 && maxDuration > 1{
-                    minDuration = minDuration - 0.25
-                    maxDuration = maxDuration - 0.1
+            if currentLevel % 2 == 0 {
+                if minDuration > 0.5 && maxDuration > 1{
+                    minDuration = minDuration - 0.05
+                    //maxDuration = maxDuration + 0.1
                 }
             }
             winMessage = "You Won"
@@ -62,8 +63,19 @@ class GameSceneNext: SKScene {
     
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
-        self.view?.presentScene(GameScene(size: self.size), transition: transition)
+        var touch:UITouch = touches.first as! UITouch
+        var location:CGPoint = touch.locationInNode(self)
+        
+        if location.y < self.frame.size.height/2{
+            var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+            self.view?.presentScene(GameScene(size: self.size), transition: transition)
+        } else{
+            var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+            self.view?.presentScene(GameScene2(size: self.size), transition: transition)
+        
+        }
+        
+
     }
     
 }
