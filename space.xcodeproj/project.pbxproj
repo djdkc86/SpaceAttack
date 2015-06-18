@@ -18,11 +18,13 @@
 		F908FD451B1E17B40055F8DB /* alien@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F908FD421B1E17B40055F8DB /* alien@2x.png */; };
 		F908FD461B1E17B40055F8DB /* shuttle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F908FD431B1E17B40055F8DB /* shuttle@2x.png */; };
 		F908FD471B1E17B40055F8DB /* torpedo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F908FD441B1E17B40055F8DB /* torpedo@2x.png */; };
-		F908FD4B1B1E17E80055F8DB /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F908FD491B1E17E80055F8DB /* bgmusic.mp3 */; };
 		F908FD4C1B1E17E80055F8DB /* torpedoFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F908FD4A1B1E17E80055F8DB /* torpedoFire.mp3 */; };
+		F91460301B22042900C6346B /* nateBGmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F914602F1B22042900C6346B /* nateBGmusic.mp3 */; };
+		F9850A0A1B239C8000A9B658 /* GameScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9850A091B239C8000A9B658 /* GameScene2.swift */; };
 		F985B9821B1F526800E654EC /* beatoff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F985B9811B1F526800E654EC /* beatoff.mp3 */; };
 		F985B9841B1F70CB00E654EC /* GameSceneNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F985B9831B1F70CB00E654EC /* GameSceneNext.swift */; };
-		F9F3C0D81B1FFE7D00A181DA /* 13 Dead Wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9F3C0D71B1FFE7D00A181DA /* 13 Dead Wrong.mp3 */; };
+		F9C33CE01B234CBF00660551 /* Alien1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C33CDF1B234CBF00660551 /* Alien1.swift */; };
+		F9C33CE21B2351F300660551 /* AlienMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C33CE11B2351F300660551 /* AlienMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +53,13 @@
 		F908FD421B1E17B40055F8DB /* alien@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien@2x.png"; sourceTree = "<group>"; };
 		F908FD431B1E17B40055F8DB /* shuttle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuttle@2x.png"; sourceTree = "<group>"; };
 		F908FD441B1E17B40055F8DB /* torpedo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torpedo@2x.png"; sourceTree = "<group>"; };
-		F908FD491B1E17E80055F8DB /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusic.mp3; sourceTree = "<group>"; };
 		F908FD4A1B1E17E80055F8DB /* torpedoFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedoFire.mp3; sourceTree = "<group>"; };
+		F914602F1B22042900C6346B /* nateBGmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nateBGmusic.mp3; sourceTree = "<group>"; };
+		F9850A091B239C8000A9B658 /* GameScene2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene2.swift; sourceTree = "<group>"; };
 		F985B9811B1F526800E654EC /* beatoff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beatoff.mp3; sourceTree = "<group>"; };
 		F985B9831B1F70CB00E654EC /* GameSceneNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneNext.swift; sourceTree = "<group>"; };
-		F9F3C0D71B1FFE7D00A181DA /* 13 Dead Wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "13 Dead Wrong.mp3"; sourceTree = "<group>"; };
+		F9C33CDF1B234CBF00660551 /* Alien1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alien1.swift; sourceTree = "<group>"; };
+		F9C33CE11B2351F300660551 /* AlienMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlienMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +101,13 @@
 		F908FD1A1B1E16E30055F8DB /* space */ = {
 			isa = PBXGroup;
 			children = (
+				F9C33CDE1B234C8500660551 /* enemies */,
 				F908FD1D1B1E16E30055F8DB /* AppDelegate.swift */,
 				F908FD1F1B1E16E30055F8DB /* GameScene.sks */,
 				F908FD211B1E16E30055F8DB /* GameScene.swift */,
 				F985B9831B1F70CB00E654EC /* GameSceneNext.swift */,
 				F908FD231B1E16E30055F8DB /* GameViewController.swift */,
+				F9850A091B239C8000A9B658 /* GameScene2.swift */,
 				F908FD481B1E17D80055F8DB /* sounds */,
 				F908FD411B1E17720055F8DB /* sprites.atlas */,
 				F908FD251B1E16E30055F8DB /* Main.storyboard */,
@@ -150,12 +156,20 @@
 		F908FD481B1E17D80055F8DB /* sounds */ = {
 			isa = PBXGroup;
 			children = (
-				F9F3C0D71B1FFE7D00A181DA /* 13 Dead Wrong.mp3 */,
+				F914602F1B22042900C6346B /* nateBGmusic.mp3 */,
 				F985B9811B1F526800E654EC /* beatoff.mp3 */,
-				F908FD491B1E17E80055F8DB /* bgmusic.mp3 */,
 				F908FD4A1B1E17E80055F8DB /* torpedoFire.mp3 */,
 			);
 			name = sounds;
+			sourceTree = "<group>";
+		};
+		F9C33CDE1B234C8500660551 /* enemies */ = {
+			isa = PBXGroup;
+			children = (
+				F9C33CDF1B234CBF00660551 /* Alien1.swift */,
+				F9C33CE11B2351F300660551 /* AlienMethods.swift */,
+			);
+			name = enemies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,10 +255,9 @@
 				F985B9821B1F526800E654EC /* beatoff.mp3 in Resources */,
 				F908FD461B1E17B40055F8DB /* shuttle@2x.png in Resources */,
 				F908FD451B1E17B40055F8DB /* alien@2x.png in Resources */,
-				F9F3C0D81B1FFE7D00A181DA /* 13 Dead Wrong.mp3 in Resources */,
 				F908FD2C1B1E16E30055F8DB /* LaunchScreen.xib in Resources */,
-				F908FD4B1B1E17E80055F8DB /* bgmusic.mp3 in Resources */,
 				F908FD471B1E17B40055F8DB /* torpedo@2x.png in Resources */,
+				F91460301B22042900C6346B /* nateBGmusic.mp3 in Resources */,
 				F908FD291B1E16E30055F8DB /* Images.xcassets in Resources */,
 				F908FD201B1E16E30055F8DB /* GameScene.sks in Resources */,
 				F908FD4C1B1E17E80055F8DB /* torpedoFire.mp3 in Resources */,
@@ -268,8 +281,11 @@
 			files = (
 				F908FD221B1E16E30055F8DB /* GameScene.swift in Sources */,
 				F985B9841B1F70CB00E654EC /* GameSceneNext.swift in Sources */,
+				F9C33CE21B2351F300660551 /* AlienMethods.swift in Sources */,
+				F9850A0A1B239C8000A9B658 /* GameScene2.swift in Sources */,
 				F908FD241B1E16E30055F8DB /* GameViewController.swift in Sources */,
 				F908FD1E1B1E16E30055F8DB /* AppDelegate.swift in Sources */,
+				F9C33CE01B234CBF00660551 /* Alien1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
